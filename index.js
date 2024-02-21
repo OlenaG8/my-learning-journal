@@ -12,7 +12,7 @@ function getArticleHtml(post) {
 }
 
 function render() {
-    document.getElementById("posts-container").innerHTML = postsArray.map(getArticleHtml).join('')
+    document.getElementById("posts-container").innerHTML += postsArray.map(getArticleHtml).join('')
 }
 
 render()
