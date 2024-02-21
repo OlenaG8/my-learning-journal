@@ -1,5 +1,10 @@
 import { postsArray } from './data.js'
 
+function getCurrentYear() {
+    const date = new Date()
+    document.getElementById("copyright-date").innerHTML = `Copyright ©${date.getFullYear()}`
+}
+
 function getArticleHtml(post) {
     return `
     <article>
@@ -16,3 +21,4 @@ function render() {
 }
 
 render()
+getCurrentYear()
