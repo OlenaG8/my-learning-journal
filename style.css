@@ -31,6 +31,7 @@ body {
 }
 
 .featured h2 { font-size: 1.3rem;}
+.about-me-intro {margin: 0.5em 0;}
 
 footer h4 { 
     margin-top: 1.5rem;
@@ -94,6 +95,11 @@ article {margin-bottom: 1em;}
     grid-column: 2 / -2;
     grid-row: 3 / -1;
     margin-bottom: 1em;
+}
+
+.about-me-con {
+    max-width: 90%;
+    margin: 1em auto;
 }
 
 footer {
@@ -175,6 +181,14 @@ img { width: 100%;}
     object-fit: cover;
 }
 
+.my-picture {
+    display: block;
+    margin: 0 auto;
+    max-width: 40vw;
+    object-fit: cover;
+    border-radius: 40px;
+}
+
 @media(max-width: 610px){
     .menu {
         flex-direction: column;
@@ -212,14 +226,19 @@ img { width: 100%;}
 
     .container { max-width: 90%;}
 
-    .posts {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))
+    .about-me-con { 
+        display: flex;
+        flex-direction: row;
     }
 
-    .featured-article {
-        margin-bottom: 1.8rem;
-    }
+    .posts { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))}
 
+    .featured-article {margin-bottom: 1.8rem; }
     .featured-img {height: 45vh; }
     .featured { margin-bottom: 2em;}
+
+    .my-picture {
+        max-width: 10vw;
+    }
+    
 }
