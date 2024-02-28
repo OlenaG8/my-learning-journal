@@ -20,5 +20,12 @@ function render() {
     document.getElementById("posts-container").innerHTML += postsArray.map(getArticleHtml).join('')
 }
 
+// function getRecentPosts() {
+//     for (let i = 0; i < 4; i++) {
+//         document.getElementById("recent-posts-container").innerHTML += postsArray.map(getArticleHtml).join('')
+//     }
+// }
+
 render()
 getCurrentYear()
+// getRecentPosts()
