@@ -20,12 +20,11 @@ function render() {
     document.getElementById("posts-container").innerHTML += postsArray.map(getArticleHtml).join('')
 }
 
-// function getRecentPosts() {
-//     for (let i = 0; i < 4; i++) {
-//         document.getElementById("recent-posts-container").innerHTML += postsArray.map(getArticleHtml).join('')
-//     }
-// }
+document.addEventListener("DOMContentLoaded", function() {
+    for (let i = 0; i < 3; i++) {
+        document.getElementById("recent-posts-container").innerHTML += getArticleHtml(postsArray[i])
+    }
+})
 
 render()
 getCurrentYear()
-// getRecentPosts()
