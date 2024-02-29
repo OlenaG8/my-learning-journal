@@ -39,11 +39,15 @@ body {
     margin: 0.65em 0;
 }
 
-.about-me-subtitle {font-size: 1rem;}
+.about-me-subtitle,
+.about-me-article h5 {font-size: 1rem;}
+
+.about-me-article p {margin: 0.7em 0;}
 
 footer h3 { font-size: 1em;}
 
-h3 { text-align: center;}
+h4 { text-align: center;}
+
 footer h4 { 
     margin-top: 1rem;
     font-weight: 400;
@@ -96,21 +100,21 @@ article {margin-bottom: 1em;}
 .featured-article {
     display: grid;
     grid-template-columns: 1.5rem auto 1.5rem;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     color: var(--white);
     text-shadow: 0 0 3px var(--black);
 }
 
 .featured {
     grid-column: 2 / -2;
-    grid-row: 3 / -1;
+    grid-row: 2 / -1;
     margin-bottom: 1em;
 }
 
-.about-me {
+.about-me,
+.about-me-article {
     display: flex;
     flex-direction: column;
-    align-items: center;
     max-width: 90%;
     margin: 1em auto;
 }
@@ -191,6 +195,7 @@ img { width: 100%;}
 .featured-img {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
+    min-height: 180px;
     object-fit: cover;
 }
 
@@ -198,6 +203,7 @@ img { width: 100%;}
     max-width: 40vw;
     object-fit: cover;
     border-radius: 30px;
+    align-self: center;
 }
 
 @media(max-width: 610px){
@@ -228,11 +234,13 @@ img { width: 100%;}
     .featured p { font-size: 1.3rem;}
 
     .about-me-intro { font-size: 2.5rem;}
-    .about-me-subtitle {font-size: 1.5rem;}
+    .about-me-subtitle,
+    .about-me-article h5  {font-size: 1.5rem;}
+    .about-me-article p { font-size: 1.15rem;}
 
     footer h3 { font-size: 1.5rem;}
 
-    h3 { 
+    h4 { 
         font-size: 1.5rem;
         grid-column: 1 / -1;
         margin-bottom: 0.6em;
@@ -249,10 +257,15 @@ img { width: 100%;}
 
     .container { max-width: 90%;}
 
+    .about-me,
+    .about-me-article { width: 80vw;}
+
     .about-me { 
         flex-direction: row;
         gap: 2.75em;
     }
+
+    .about-me-article { margin: 1.7em auto;}
 
     .posts { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))}
 
