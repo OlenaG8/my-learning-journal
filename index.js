@@ -1,17 +1,26 @@
 import { postsArray } from './data-posts-array.js'
 
+
+const morePostsBtn = document.getElementById('more-posts-btn')
+const copyrightDate = document.getElementById("copyright-date")
+const postsContainer = document.getElementById("posts-container")
+const aboutMeArticle = document.getElementById('about-me-article')
+const recentPostsCon = document.getElementById("recent-posts-container")
+
 function getCurrentYear() {
     const date = new Date()
-    document.getElementById("copyright-date").innerHTML = `Copyright ©${date.getFullYear()}`
+    copyrightDate.innerHTML = `Copyright ©${date.getFullYear()}`
 }
 
 function getArticleHtml(post) {
     return `
     <article>
+    <a href="recent-posts.html">
         <img class="article-img" src="${post.photo}" alt="Post thumbnail">
         <span class="article-info">${post.publishingDate}</span>
         <h2 class="article-title">${post.title}</h2>
-        <p class="article-preview">${post.preview}</p>                
+        <p class="article-preview">${post.preview}</p> 
+    </a>               
     </article>
     `
 }
@@ -41,14 +50,20 @@ function getAboutMeArticle() {
 }
 
 function render() {
-    document.getElementById("posts-container").innerHTML += postsArray.map(getArticleHtml).join('')
+    postsContainer.innerHTML += postsArray.map(getArticleHtml).join('')
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById('about-me-article').innerHTML = getAboutMeArticle()
+    aboutMeArticle.innerHTML = getAboutMeArticle()
     for (let i = 0; i < 3; i++) {
-        document.getElementById("recent-posts-container").innerHTML += getArticleHtml(postsArray[i])
+        recentPostsCon.innerHTML += getArticleHtml(postsArray[i])
     }
+    morePostsBtn.addEventListener('click', function(){
+        for (let i = 3; i < 6; i++) {
+            recentPostsCon.innerHTML += getArticleHtml(postsArray[i])
+        }
+        morePostsBtn.style.display = 'none'
+    })
     getCurrentYear()
 })
 

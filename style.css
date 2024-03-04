@@ -31,8 +31,8 @@ body {
 }
 
 .featured { line-height: 1.5;}
-.featured h2 { font-size: 1.3rem;}
-.featured p { font-size: 0.7rem;}
+.featured h2 { font-size: 1.5rem;}
+.featured p { font-size: 0.8rem;}
 
 .about-me-intro { 
     font-size: 1.25rem;
@@ -41,20 +41,17 @@ body {
 
 .about-me-subtitle,
 .about-me-article h5 {font-size: 1rem;}
-
 .about-me-article p {margin: 0.7em 0;}
 
 footer h3 { font-size: 1em;}
-
-h4 { text-align: center;}
 
 footer h4 { 
     margin-top: 1rem;
     font-weight: 400;
 }
 
+h4 { text-align: center;}
 p { line-height: 1.3;}
-
 span { font-size: 0.8rem;}
 
 /* ----- LAYOUT ----- */
@@ -112,11 +109,12 @@ article {margin-bottom: 1em;}
 }
 
 .about-me,
-.about-me-article {
+.about-me-article,
+.recent-article {
     display: flex;
     flex-direction: column;
     max-width: 90%;
-    margin: 1em auto;
+    margin: 1.5em auto;
 }
 
 footer {
@@ -130,9 +128,10 @@ footer {
     width: 100vw;
     margin-top: 3rem;
 }
+
 /* ----- LINKS ----- */
 
-nav a {
+a {
     color: var(--black);
     text-decoration: none; 
 }
@@ -157,6 +156,7 @@ nav a {
     background-color: var(--asphalt-grey);
     transition: 0.15s ease-in-out;
 }
+
 .menu li a:hover:after {width: 100%;}
 .open-menu , .close-menu {
     position: absolute;
@@ -165,11 +165,13 @@ nav a {
     font-size: 1.5rem;
     display: none;
 }
+
 .open-menu {
     top: 50%;
     right: 20px;
     transform: translateY(-50%);
 }
+
 .close-menu {
     top: 20px;
     right: 20px;
@@ -195,7 +197,7 @@ img { width: 100%;}
 .featured-img {
     grid-column: 1 / -1;
     grid-row: 1 / -1;
-    min-height: 180px;
+    min-height: 190px;
     object-fit: cover;
 }
 
@@ -204,6 +206,18 @@ img { width: 100%;}
     object-fit: cover;
     border-radius: 30px;
     align-self: center;
+}
+
+/* ----- BUTTONS ----- */
+
+.more-posts-btn {
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+    font-size: 1em;
+
+    display: block;
+    margin: 1.3em auto;
 }
 
 @media(max-width: 610px){
@@ -242,10 +256,10 @@ img { width: 100%;}
 
     h4 { 
         font-size: 1.5rem;
-        grid-column: 1 / -1;
         margin-bottom: 0.6em;
     }
 
+    .menu li { font-size: 20px; }
     span { font-size: 1rem;}
 
     .logo-img {
@@ -253,24 +267,23 @@ img { width: 100%;}
         height: 50px;
     }
 
-    .menu li { font-size: 20px; }
-
     .container { max-width: 90%;}
 
     .about-me,
-    .about-me-article { width: 80vw;}
+    .about-me-article { 
+        width: 80vw;
+        margin: 2.3em auto;
+    }
 
     .about-me { 
         flex-direction: row;
         gap: 2.75em;
     }
 
-    .about-me-article { margin: 1.7em auto;}
-
     .posts { grid-template-columns: repeat(auto-fit, minmax(400px, 1fr))}
 
     .featured-article {margin-bottom: 1.8rem; }
-    .featured-img {height: 45vh; }
+    .featured-img {height: 48vh; }
     .featured { margin-bottom: 2em;}
 
     .my-picture {
